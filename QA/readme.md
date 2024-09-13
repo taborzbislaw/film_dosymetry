@@ -1,0 +1,1 @@
+3DSlicer implementation of gamma analysis between calibrated film and TPS-calculated dose. Includes determination of the film plane in the 3D TPS dose distribution, affine registration and gamma pasing rate calculation.
