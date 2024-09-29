@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>film_dosymetry</class>
+ <widget class="qMRMLWidget" name="film_dosymetry">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>332</width>
+    <height>672</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="ctkCollapsibleButton" name="inputsCollapsibleButton">
+     <property name="text">
+      <string>Inputs</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Film to be calibrated</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="qMRMLNodeComboBox" name="inputSelector">
+        <property name="toolTip">
+         <string>Pick the input to the algorithm.</string>
+        </property>
+        <property name="nodeTypes">
+         <stringlist notr="true">
+          <string>vtkMRMLScalarVolumeNode</string>
+         </stringlist>
+        </property>
+        <property name="showChildNodeTypes">
+         <bool>false</bool>
+        </property>
+        <property name="addEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="removeEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="SlicerParameterName" stdset="0">
+         <string>inputVolume</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Callibration coefficients file</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="ctkPathLineEdit" name="CalibrationCoefficientsFilePath"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Select ROI</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="qMRMLNodeComboBox" name="roiSelector">
+        <property name="toolTip">
+         <string>Pick the input to the algorithm.</string>
+        </property>
+        <property name="nodeTypes">
+         <stringlist notr="true">
+          <string>vtkMRMLScalarVolumeNode</string>
+         </stringlist>
+        </property>
+        <property name="showChildNodeTypes">
+         <bool>false</bool>
+        </property>
+        <property name="addEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="removeEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="SlicerParameterName" stdset="0">
+         <string>roi</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0" colspan="2">
+       <widget class="QPushButton" name="applyButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Run the algorithm.</string>
+        </property>
+        <property name="text">
+         <string>Apply</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="qMRMLNodeComboBox" name="markupSelector1">
+        <property name="toolTip">
+         <string>Pick the input to the algorithm.</string>
+        </property>
+        <property name="nodeTypes">
+         <stringlist notr="true">
+          <string>vtkMRMLScalarVolumeNode</string>
+         </stringlist>
+        </property>
+        <property name="showChildNodeTypes">
+         <bool>false</bool>
+        </property>
+        <property name="addEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="removeEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="SlicerParameterName" stdset="0">
+         <string>markup1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="qMRMLNodeComboBox" name="markupSelector2">
+        <property name="toolTip">
+         <string>Pick the input to the algorithm.</string>
+        </property>
+        <property name="nodeTypes">
+         <stringlist notr="true">
+          <string>vtkMRMLScalarVolumeNode</string>
+         </stringlist>
+        </property>
+        <property name="showChildNodeTypes">
+         <bool>false</bool>
+        </property>
+        <property name="addEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="removeEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="SlicerParameterName" stdset="0">
+         <string>markup2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Markup 1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Markup 2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QDoubleSpinBox" name="doseSelector1">
+        <property name="maximum">
+         <double>10000.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QDoubleSpinBox" name="doseSelector2">
+        <property name="maximum">
+         <double>10000.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Dose 1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Dose 2</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="ctkCollapsibleButton" name="advancedCollapsibleButton">
+     <property name="text">
+      <string>Advanced</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="collapsed">
+      <bool>true</bool>
+     </property>
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBoxMedianFilter">
+        <property name="text">
+         <string>Apply median filter with kernel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="spinBoxMedianFilterKernelSize">
+        <property name="singleStep">
+         <number>2</number>
+        </property>
+        <property name="value">
+         <number>3</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Tolerance</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QDoubleSpinBox" name="doubleSpinBoxTolerance">
+        <property name="decimals">
+         <number>8</number>
+        </property>
+        <property name="maximum">
+         <double>1.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.000001000000000</double>
+        </property>
+        <property name="value">
+         <double>0.010000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Number of iterations</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="spinBoxIterations">
+        <property name="maximum">
+         <number>100000</number>
+        </property>
+        <property name="singleStep">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>1000</number>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Normalization factor</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QDoubleSpinBox" name="doubleSpinBoxNormalization">
+        <property name="maximum">
+         <double>100000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>65536.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Number of workers</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QSpinBox" name="spinBoxNumberOfWorkers">
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>4</number>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Maximal dose [cGy]</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QDoubleSpinBox" name="doubleSpinBoxMaxDose">
+        <property name="maximum">
+         <double>10000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>3000.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Box size for reference doses</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QSpinBox" name="boxSize">
+        <property name="minimum">
+         <number>10</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="value">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ctkCollapsibleButton</class>
+   <extends>QWidget</extends>
+   <header>ctkCollapsibleButton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ctkPathLineEdit</class>
+   <extends>QWidget</extends>
+   <header>ctkPathLineEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>qMRMLNodeComboBox</class>
+   <extends>QWidget</extends>
+   <header>qMRMLNodeComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>qMRMLWidget</class>
+   <extends>QWidget</extends>
+   <header>qMRMLWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>film_dosymetry</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>inputSelector</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>film_dosymetry</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>roiSelector</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>film_dosymetry</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>markupSelector1</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>317</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>244</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>film_dosymetry</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>markupSelector2</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>317</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>244</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
