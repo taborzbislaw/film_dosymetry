@@ -151,7 +151,7 @@ for row in range(START,END):
                 if numIter > MAX_ITER:
                     break
                     
-            calibrated_image[row,column] = round((a+b)/2)
+            calibrated_image[row,column] = max(0,round((a+b)/2))
 
             if calibrated_image[row,column] >= DOSE_MAX-1:
                 a = 0
@@ -173,7 +173,7 @@ for row in range(START,END):
                     if numIter > MAX_ITER:
                         break
                         
-                calibrated_image[row,column] = round((a+b)/2)
+                calibrated_image[row,column] = max(0,round((a+b)/2))
 
 
 
